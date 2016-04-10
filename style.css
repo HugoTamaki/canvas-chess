@@ -1,0 +1,57 @@
+.piece {
+  background-image: url(Chess_Pieces_Sprite.svg.png);
+  width: 90px;
+  height: 90px;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 500px 170px;
+  border: 1px solid black;
+}
+
+.white-pawn {
+  background-position: -410px 0;
+}
+
+.white-bishop {
+  background-position: -162px 0;
+}
+
+.white-tower {
+  background-position: -328px 0;
+}
+
+.white-knight {
+  background-position: -246px 0;
+}
+
+.white-king {
+  background-position: 3px 0;
+}
+
+.white-queen {
+  background-position: -80px 0;
+}
+
+.black-pawn {
+  background-position: -410px -85px;
+}
+
+.black-bishop {
+  background-position: -162px -85px;
+}
+
+.black-tower {
+  background-position: -328px -85px;
+}
+
+.black-knight {
+  background-position: -246px -85px;
+}
+
+.black-king {
+   background-position: 3px -85px;
+}
+
+.black-queen {
+  background-position: -80px -85px;
+}

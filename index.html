@@ -4,49 +4,25 @@
   <meta charset="UTF-8">
   <title>Canvas test</title>
   <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-  <script>
-    $(document).ready(function () {
-      var canvas = document.getElementById('canvas')
-      var context = canvas.getContext("2d")
-
-      function drawTable() {
-        drawLines()
-        for(var i=0;i<1000;i+=125) {
-          if (i % 10 === 0) {
-            fillSquares(0, i, '#000000')
-          } else {
-            fillSquares(125, i, '#000000')
-          }
-        }
-      }
-
-      function drawLines() {
-        for(var i=125;i<1000;i+=125) {
-          context.moveTo(0, i)
-          context.lineTo(1000, i)
-          context.stroke()
-        }
-
-        for(var i=125;i<1000;i+=125) {
-          context.moveTo(i, 0)
-          context.lineTo(i, 1000)
-          context.stroke()
-        }
-      }
-
-      function fillSquares(start, height, color) {
-        context.fillStyle = color
-        for(var i=start;i<1000;i+=250) {
-          context.fillRect(i, height, 125, 125)
-        }
-      }
-
-      drawTable()
-      pawn()
-    })
-  </script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+  <div>
+    <span class="piece white-pawn"></span>
+    <span class="piece white-bishop"></span>
+    <span class="piece white-tower"></span>
+    <span class="piece white-knight"></span>
+    <span class="piece white-king"></span>
+    <span class="piece white-queen"></span>
+
+    <span class="piece black-pawn"></span>
+    <span class="piece black-bishop"></span>
+    <span class="piece black-tower"></span>
+    <span class="piece black-knight"></span>
+    <span class="piece black-king"></span>
+    <span class="piece black-queen"></span>    
+  </div>
   <canvas id="canvas" width="1000" height="1000" style="border:1px solid #000000;"></canvas>
 </body>
 </html>
