@@ -325,5 +325,92 @@ $(document).ready(function () {
     }
   }
 
+  function drawPiece(piece) {
+    var img = document.getElementById(piece.type)
+    var x = piece.x + 20
+    var y = piece.y + 20
+    context.drawImage(img, x, y, 90, 90)
+  }
+
+  function Piece(type, position) {
+    return {
+      x: position.x,
+      y: position.y,
+      type: type,
+      display: true
+    }
+  }
+
+  function initPieces() {
+    whitePawn1   = new Piece('white-pawn', positions.A2)
+    whitePawn2   = new Piece('white-pawn', positions.B2)
+    whitePawn3   = new Piece('white-pawn', positions.C2)
+    whitePawn4   = new Piece('white-pawn', positions.D2)
+    whitePawn5   = new Piece('white-pawn', positions.E2)
+    whitePawn6   = new Piece('white-pawn', positions.F2)
+    whitePawn7   = new Piece('white-pawn', positions.G2)
+    whitePawn8   = new Piece('white-pawn', positions.H2)
+    whiteBishop1 = new Piece('white-bishop', positions.C1)
+    whiteBishop2 = new Piece('white-bishop', positions.F1)
+    whiteKnight1 = new Piece('white-knight', positions.B1)
+    whiteKnight2 = new Piece('white-knight', positions.G1)
+    whiteTower1  = new Piece('white-tower', positions.A1)
+    whiteTower2  = new Piece('white-tower', positions.H1)
+    whiteKing    = new Piece('white-king', positions.E1)
+    whiteQueen   = new Piece('white-queen', positions.D1)
+
+    blackPawn1   = new Piece('black-pawn', positions.A7)
+    blackPawn2   = new Piece('black-pawn', positions.B7)
+    blackPawn3   = new Piece('black-pawn', positions.C7)
+    blackPawn4   = new Piece('black-pawn', positions.D7)
+    blackPawn5   = new Piece('black-pawn', positions.E7)
+    blackPawn6   = new Piece('black-pawn', positions.F7)
+    blackPawn7   = new Piece('black-pawn', positions.G7)
+    blackPawn8   = new Piece('black-pawn', positions.H7)
+    blackBishop1 = new Piece('black-bishop', positions.C8)
+    blackBishop2 = new Piece('black-bishop', positions.F8)
+    blackKnight1 = new Piece('black-knight', positions.B8)
+    blackKnight2 = new Piece('black-knight', positions.G8)
+    blackTower1  = new Piece('black-tower', positions.A8)
+    blackTower2  = new Piece('black-tower', positions.H8)
+    blackKing    = new Piece('black-king', positions.E8)
+    blackQueen   = new Piece('black-queen', positions.D8)
+
+    drawPiece(whitePawn1)
+    drawPiece(whitePawn2)
+    drawPiece(whitePawn3)
+    drawPiece(whitePawn4)
+    drawPiece(whitePawn5)
+    drawPiece(whitePawn6)
+    drawPiece(whitePawn7)
+    drawPiece(whitePawn8)
+    drawPiece(whiteBishop1)
+    drawPiece(whiteBishop2)
+    drawPiece(whiteKnight1)
+    drawPiece(whiteKnight2)
+    drawPiece(whiteTower1)
+    drawPiece(whiteTower2)
+    drawPiece(whiteKing)
+    drawPiece(whiteQueen)
+
+    drawPiece(blackPawn1)
+    drawPiece(blackPawn2)
+    drawPiece(blackPawn3)
+    drawPiece(blackPawn4)
+    drawPiece(blackPawn5)
+    drawPiece(blackPawn6)
+    drawPiece(blackPawn7)
+    drawPiece(blackPawn8)
+    drawPiece(blackBishop1)
+    drawPiece(blackBishop2)
+    drawPiece(blackKnight1)
+    drawPiece(blackKnight2)
+    drawPiece(blackTower1)
+    drawPiece(blackTower2)
+    drawPiece(blackKing)
+    drawPiece(blackQueen)
+  }
+
   drawTable()
+  initPieces()
 })
