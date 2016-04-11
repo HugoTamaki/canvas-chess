@@ -1,11 +1,7 @@
 .piece {
-  background-image: url(Chess_Pieces_Sprite.svg.png);
   width: 90px;
   height: 90px;
   display: block;
-  background-repeat: no-repeat;
-  background-size: 500px 170px;
-  border: 1px solid black;
 }
 
 .white-pawn {
