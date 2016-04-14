@@ -7,328 +7,520 @@ function Board() {
       fillPieces
 
   Board = {
-    positions: {
-        A1: {
+    positions: [
+        {
+          label: 'A1',
           x: 0,
           y: 875,
+          eX: 125,
+          eY: 1000,
           piece: null
         },
-        B1: {
+        {
+          label: 'B1',
           x: 125,
           y: 875,
+          eX: 250,
+          eY: 1000,
           piece: null
         },
-        C1: {
+        {
+          label: 'C1',
           x: 250,
           y: 875,
+          eX: 375,
+          eY: 1000,
           piece: null
         },
-        D1: {
+        {
+          label: 'D1',
           x: 375,
           y: 875,
+          eX: 500,
+          eY: 1000,
           piece: null
         },
-        E1: {
+        {
+          label: 'E1',
           x: 500,
           y: 875,
+          eX: 625,
+          eY: 1000,
           piece: null
         },
-        F1: {
+        {
+          label: 'F1',
           x: 625,
           y: 875,
+          eX: 750,
+          eY: 1000,
           piece: null
         },
-        G1: {
+        {
+          label: 'G1',
           x: 750,
           y: 875,
+          eX: 875,
+          eY: 1000,
           piece: null
         },
-        H1: {
+        {
+          label: 'H1',
           x: 875,
           y: 875,
+          eX: 1000,
+          eY: 1000,
           piece: null
         },
-        A2: {
+        {
+          label: 'A2',
           x: 0,
           y: 750,
+          eX: 125,
+          eY: 875,
           piece: null
         },
-        B2: {
+        {
+          label: 'B2',
           x: 125,
           y: 750,
+          eX: 250,
+          eY: 875,
           piece: null
         },
-        C2: {
+        {
+          label: 'C2',
           x: 250,
           y: 750,
+          eX: 375,
+          eY: 875,
           piece: null
         },
-        D2: {
+        {
+          label: 'D2',
           x: 375,
           y: 750,
+          eX: 500,
+          eY: 875,
           piece: null
         },
-        E2: {
+        {
+          label: 'E2',
           x: 500,
           y: 750,
+          eX: 625,
+          eY: 875,
           piece: null
         },
-        F2: {
+        {
+          label: 'F2',
           x: 625,
           y: 750,
+          eX: 750,
+          eY: 875,
           piece: null
         },
-        G2: {
+        {
+          label: 'G2',
           x: 750,
           y: 750,
+          eX: 875,
+          eY: 875,
           piece: null
         },
-        H2: {
+        {
+          label: 'H2',
           x: 875,
           y: 750,
+          eX: 1000,
+          eY: 875,
           piece: null
         },
-        A3: {
+        {
+          label: 'A3',
           x: 0,
           y: 625,
+          eX: 125,
+          eY: 750,
           piece: null
         },
-        B3: {
+        {
+          label: 'B3',
           x: 125,
           y: 625,
+          eX: 250,
+          eY: 750,
           piece: null
         },
-        C3: {
+        {
+          label: 'C3',
           x: 250,
           y: 625,
+          eX: 375,
+          eY: 750,
           piece: null
         },
-        D3: {
+        {
+          label: 'D3',
           x: 375,
           y: 625,
+          eX: 500,
+          eY: 750,
           piece: null
         },
-        E3: {
+        {
+          label: 'E3',
           x: 500,
           y: 625,
+          eX: 625,
+          eY: 750,
           piece: null
         },
-        F3: {
+        {
+          label: 'F3',
           x: 625,
           y: 625,
+          eX: 750,
+          eY: 750,
           piece: null
         },
-        G3: {
+        {
+          label: 'G3',
           x: 750,
           y: 625,
+          eX: 875,
+          eY: 750,
           piece: null
         },
-        H3: {
+        {
+          label: 'H3',
           x: 875,
           y: 625,
+          eX: 1000,
+          eY: 750,
           piece: null
         },
-        A4: {
+        {
+          label: 'A4',
           x: 0,
           y: 500,
+          eX: 125,
+          eY: 625,
           piece: null
         },
-        B4: {
+        {
+          label: 'B4',
           x: 125,
           y: 500,
+          eX: 250,
+          eY: 625,
           piece: null
         },
-        C4: {
+        {
+          label: 'C4',
           x: 250,
           y: 500,
+          eX: 375,
+          eY: 625,
           piece: null
         },
-        D4: {
+        {
+          label: 'D4',
           x: 375,
           y: 500,
+          eX: 500,
+          eY: 625,
           piece: null
         },
-        E4: {
+        {
+          label: 'E4',
           x: 500,
           y: 500,
+          eX: 625,
+          eY: 625,
           piece: null
         },
-        F4: {
+        {
+          label: 'F4',
           x: 625,
           y: 500,
+          eX: 750,
+          eY: 625,
           piece: null
         },
-        G4: {
+        {
+          label: 'G4',
           x: 750,
           y: 500,
+          eX: 875,
+          eY: 625,
           piece: null
         },
-        H4: {
+        {
+          label: 'H4',
           x: 875,
           y: 500,
+          eX: 1000,
+          eY: 625,
           piece: null
         },
-        A5: {
+        {
+          label: 'A5',
           x: 0,
           y: 375,
+          eX: 125,
+          eY: 500,
           piece: null
         },
-        B5: {
+        {
+          label: 'B5',
           x: 125,
           y: 375,
+          eX: 250,
+          eY: 500,
           piece: null
         },
-        C5: {
+        {
+          label: 'C5',
           x: 250,
           y: 375,
+          eX: 375,
+          eY: 500,
           piece: null
         },
-        D5: {
+        {
+          label: 'D5',
           x: 375,
           y: 375,
+          eX: 500,
+          eY: 500,
           piece: null
         },
-        E5: {
+        {
+          label: 'E5',
           x: 500,
           y: 375,
+          eX: 625,
+          eY: 500,
           piece: null
         },
-        F5: {
+        {
+          label: 'F5',
           x: 625,
           y: 375,
+          eX: 750,
+          eY: 500,
           piece: null
         },
-        G5: {
+        {
+          label: 'G5',
           x: 750,
           y: 375,
+          eX: 875,
+          eY: 500,
           piece: null
         },
-        H5: {
+        {
+          label: 'H5',
           x: 875,
           y: 375,
+          eX: 1000,
+          eY: 500,
           piece: null
         },
-        A6: {
+        {
+          label: 'A6',
           x: 0,
           y: 250,
+          eX: 125,
+          eY: 375,
           piece: null
         },
-        B6: {
+        {
+          label: 'B6',
           x: 125,
           y: 250,
+          eX: 250,
+          eY: 375,
           piece: null
         },
-        C6: {
+        {
+          label: 'C6',
           x: 250,
           y: 250,
+          eX: 375,
+          eY: 375,
           piece: null
         },
-        D6: {
+        {
+          label: 'D6',
           x: 375,
           y: 250,
+          eX: 500,
+          eY: 375,
           piece: null
         },
-        E6: {
+        {
+          label: 'E6',
           x: 500,
           y: 250,
+          eX: 625,
+          eY: 375,
           piece: null
         },
-        F6: {
+        {
+          label: 'F6',
           x: 625,
           y: 250,
+          eX: 750,
+          eY: 375,
           piece: null
         },
-        G6: {
+        {
+          label: 'G6',
           x: 750,
           y: 250,
+          eX: 875,
+          eY: 375,
           piece: null
         },
-        H6: {
+        {
+          label: 'H6',
           x: 875,
           y: 250,
+          eX: 1000,
+          eY: 375,
           piece: null
         },
-        A7: {
+        {
+          label: 'A7',
           x: 0,
           y: 125,
+          eX: 125,
+          eY: 250,
           piece: null
         },
-        B7: {
+        {
+          label: 'B7',
           x: 125,
           y: 125,
+          eX: 250,
+          eY: 250,
           piece: null
         },
-        C7: {
+        {
+          label: 'C7',
           x: 250,
           y: 125,
+          eX: 375,
+          eY: 250,
           piece: null
         },
-        D7: {
+        {
+          label: 'D7',
           x: 375,
           y: 125,
+          eX: 500,
+          eY: 250,
           piece: null
         },
-        E7: {
+        {
+          label: 'E7',
           x: 500,
           y: 125,
+          eX: 625,
+          eY: 250,
           piece: null
         },
-        F7: {
+        {
+          label: 'F7',
           x: 625,
           y: 125,
+          eX: 750,
+          eY: 250,
           piece: null
         },
-        G7: {
+        {
+          label: 'G7',
           x: 750,
           y: 125,
+          eX: 875,
+          eY: 250,
           piece: null
         },
-        H7: {
+        {
+          label: 'H7',
           x: 875,
           y: 125,
+          eX: 1000,
+          eY: 250,
           piece: null
         },
-        A8: {
+        {
+          label: 'A8',
           x: 0,
           y: 0,
+          eX: 125,
+          eY: 125,
           piece: null
         },
-        B8: {
+        {
+          label: 'B8',
           x: 125,
           y: 0,
+          eX: 250,
+          eY: 125,
           piece: null
         },
-        C8: {
+        {
+          label: 'C8',
           x: 250,
           y: 0,
+          eX: 375,
+          eY: 125,
           piece: null
         },
-        D8: {
+        {
+          label: 'D8',
           x: 375,
           y: 0,
+          eX: 500,
+          eY: 125,
           piece: null
         },
-        E8: {
+        {
+          label: 'E8',
           x: 500,
           y: 0,
+          eX: 625,
+          eY: 125,
           piece: null
         },
-        F8: {
+        {
+          label: 'F8',
           x: 625,
           y: 0,
+          eX: 750,
+          eY: 125,
           piece: null
         },
-        G8: {
+        {
+          label: 'G8',
           x: 750,
           y: 0,
+          eX: 875,
+          eY: 125,
           piece: null
         },
-        H8: {
+        {
+          label: 'H8',
           x: 875,
           y: 0,
+          eX: 1000,
+          eY: 125,
           piece: null
         }
-    },
+    ],
 
     init: function (context, pieces) {
       drawBoard(context)
@@ -348,8 +540,12 @@ function Board() {
       var x = event.x - rect.left
       var y = event.y - rect.top
 
-      console.log('x: ', x)
-      console.log('y: ', y)
+      var position = Board.positions.filter(function (position) {
+        return ((x >= position.x && x <= position.eX) &&
+          (y >= position.y && y <= position.eY))
+      })
+
+      console.log(position.label)
     }
   }
 
