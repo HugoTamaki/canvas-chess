@@ -340,6 +340,16 @@ function Board() {
       var x = piece.x + 20
       var y = piece.y + 20
       context.drawImage(img, x, y, 90, 90)
+    },
+
+    click: function (event) {
+      var canvas = document.getElementById('canvas')
+      var rect = canvas.getBoundingClientRect()
+      var x = event.x - rect.left
+      var y = event.y - rect.top
+
+      console.log('x: ', x)
+      console.log('y: ', y)
     }
   }
 

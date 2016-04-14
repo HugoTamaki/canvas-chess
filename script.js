@@ -71,4 +71,5 @@ $(document).ready(function () {
   ]
 
   board.init(context, pieces)
+  canvas.addEventListener("mousedown", board.click, false)
 })
