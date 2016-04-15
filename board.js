@@ -21,6 +21,10 @@ function Board() {
       context.drawImage(img, x, y, 90, 90)
     },
 
+    findPosition: function (label) {
+      return this.positions.find(function (obj) { return obj.label ===  label})
+    },
+
     click: function (event) {
       var canvas = document.getElementById('canvas')
       var rect = canvas.getBoundingClientRect()
