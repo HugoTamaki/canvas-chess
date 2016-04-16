@@ -37,8 +37,8 @@ function Board() {
     click: function (event) {
       var canvas = document.getElementById('canvas')
       var rect = canvas.getBoundingClientRect()
-      var x = event.x - rect.left
-      var y = event.y - rect.top
+      var x = event.clientX - rect.left
+      var y = event.clientY - rect.top
 
       var clickedPosition = Board.findPositionByCoord(x, y)
 
