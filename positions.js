@@ -5,6 +5,7 @@ var positions = [
     y: 875,
     eX: 125,
     eY: 1000,
+    color: 'white',
     piece: null
   },
   {
@@ -13,6 +14,7 @@ var positions = [
     y: 875,
     eX: 250,
     eY: 1000,
+    color: 'black',
     piece: null
   },
   {
@@ -21,6 +23,7 @@ var positions = [
     y: 875,
     eX: 375,
     eY: 1000,
+    color: 'white',
     piece: null
   },
   {
@@ -29,6 +32,7 @@ var positions = [
     y: 875,
     eX: 500,
     eY: 1000,
+    color: 'black',
     piece: null
   },
   {
@@ -37,6 +41,7 @@ var positions = [
     y: 875,
     eX: 625,
     eY: 1000,
+    color: 'white',
     piece: null
   },
   {
@@ -45,6 +50,7 @@ var positions = [
     y: 875,
     eX: 750,
     eY: 1000,
+    color: 'black',
     piece: null
   },
   {
@@ -53,6 +59,7 @@ var positions = [
     y: 875,
     eX: 875,
     eY: 1000,
+    color: 'white',
     piece: null
   },
   {
@@ -61,6 +68,7 @@ var positions = [
     y: 875,
     eX: 1000,
     eY: 1000,
+    color: 'black',
     piece: null
   },
   {
@@ -69,6 +77,7 @@ var positions = [
     y: 750,
     eX: 125,
     eY: 875,
+    color: 'black',
     piece: null
   },
   {
@@ -77,6 +86,7 @@ var positions = [
     y: 750,
     eX: 250,
     eY: 875,
+    color: 'white',
     piece: null
   },
   {
@@ -85,6 +95,7 @@ var positions = [
     y: 750,
     eX: 375,
     eY: 875,
+    color: 'black',
     piece: null
   },
   {
@@ -93,6 +104,7 @@ var positions = [
     y: 750,
     eX: 500,
     eY: 875,
+    color: 'white',
     piece: null
   },
   {
@@ -101,6 +113,7 @@ var positions = [
     y: 750,
     eX: 625,
     eY: 875,
+    color: 'black',
     piece: null
   },
   {
@@ -109,6 +122,7 @@ var positions = [
     y: 750,
     eX: 750,
     eY: 875,
+    color: 'white',
     piece: null
   },
   {
@@ -117,6 +131,7 @@ var positions = [
     y: 750,
     eX: 875,
     eY: 875,
+    color: 'black',
     piece: null
   },
   {
@@ -125,6 +140,7 @@ var positions = [
     y: 750,
     eX: 1000,
     eY: 875,
+    color: 'white',
     piece: null
   },
   {
@@ -133,6 +149,7 @@ var positions = [
     y: 625,
     eX: 125,
     eY: 750,
+    color: 'white',
     piece: null
   },
   {
@@ -141,6 +158,7 @@ var positions = [
     y: 625,
     eX: 250,
     eY: 750,
+    color: 'black',
     piece: null
   },
   {
@@ -149,6 +167,7 @@ var positions = [
     y: 625,
     eX: 375,
     eY: 750,
+    color: 'white',
     piece: null
   },
   {
@@ -157,6 +176,7 @@ var positions = [
     y: 625,
     eX: 500,
     eY: 750,
+    color: 'black',
     piece: null
   },
   {
@@ -165,6 +185,7 @@ var positions = [
     y: 625,
     eX: 625,
     eY: 750,
+    color: 'white',
     piece: null
   },
   {
@@ -173,6 +194,7 @@ var positions = [
     y: 625,
     eX: 750,
     eY: 750,
+    color: 'black',
     piece: null
   },
   {
@@ -181,6 +203,7 @@ var positions = [
     y: 625,
     eX: 875,
     eY: 750,
+    color: 'white',
     piece: null
   },
   {
@@ -189,6 +212,7 @@ var positions = [
     y: 625,
     eX: 1000,
     eY: 750,
+    color: 'black',
     piece: null
   },
   {
@@ -197,6 +221,7 @@ var positions = [
     y: 500,
     eX: 125,
     eY: 625,
+    color: 'black',
     piece: null
   },
   {
@@ -205,6 +230,7 @@ var positions = [
     y: 500,
     eX: 250,
     eY: 625,
+    color: 'white',
     piece: null
   },
   {
@@ -213,6 +239,7 @@ var positions = [
     y: 500,
     eX: 375,
     eY: 625,
+    color: 'black',
     piece: null
   },
   {
@@ -221,6 +248,7 @@ var positions = [
     y: 500,
     eX: 500,
     eY: 625,
+    color: 'white',
     piece: null
   },
   {
@@ -229,6 +257,7 @@ var positions = [
     y: 500,
     eX: 625,
     eY: 625,
+    color: 'black',
     piece: null
   },
   {
@@ -237,6 +266,7 @@ var positions = [
     y: 500,
     eX: 750,
     eY: 625,
+    color: 'white',
     piece: null
   },
   {
@@ -245,6 +275,7 @@ var positions = [
     y: 500,
     eX: 875,
     eY: 625,
+    color: 'black',
     piece: null
   },
   {
@@ -253,6 +284,7 @@ var positions = [
     y: 500,
     eX: 1000,
     eY: 625,
+    color: 'white',
     piece: null
   },
   {
@@ -261,6 +293,7 @@ var positions = [
     y: 375,
     eX: 125,
     eY: 500,
+    color: 'white',
     piece: null
   },
   {
@@ -269,6 +302,7 @@ var positions = [
     y: 375,
     eX: 250,
     eY: 500,
+    color: 'black',
     piece: null
   },
   {
@@ -277,6 +311,7 @@ var positions = [
     y: 375,
     eX: 375,
     eY: 500,
+    color: 'white',
     piece: null
   },
   {
@@ -285,6 +320,7 @@ var positions = [
     y: 375,
     eX: 500,
     eY: 500,
+    color: 'black',
     piece: null
   },
   {
@@ -293,6 +329,7 @@ var positions = [
     y: 375,
     eX: 625,
     eY: 500,
+    color: 'white',
     piece: null
   },
   {
@@ -301,6 +338,7 @@ var positions = [
     y: 375,
     eX: 750,
     eY: 500,
+    color: 'black',
     piece: null
   },
   {
@@ -309,6 +347,7 @@ var positions = [
     y: 375,
     eX: 875,
     eY: 500,
+    color: 'white',
     piece: null
   },
   {
@@ -317,6 +356,7 @@ var positions = [
     y: 375,
     eX: 1000,
     eY: 500,
+    color: 'black',
     piece: null
   },
   {
@@ -325,6 +365,7 @@ var positions = [
     y: 250,
     eX: 125,
     eY: 375,
+    color: 'black',
     piece: null
   },
   {
@@ -333,6 +374,7 @@ var positions = [
     y: 250,
     eX: 250,
     eY: 375,
+    color: 'white',
     piece: null
   },
   {
@@ -341,6 +383,7 @@ var positions = [
     y: 250,
     eX: 375,
     eY: 375,
+    color: 'black',
     piece: null
   },
   {
@@ -349,6 +392,7 @@ var positions = [
     y: 250,
     eX: 500,
     eY: 375,
+    color: 'white',
     piece: null
   },
   {
@@ -357,6 +401,7 @@ var positions = [
     y: 250,
     eX: 625,
     eY: 375,
+    color: 'black',
     piece: null
   },
   {
@@ -365,6 +410,7 @@ var positions = [
     y: 250,
     eX: 750,
     eY: 375,
+    color: 'white',
     piece: null
   },
   {
@@ -373,6 +419,7 @@ var positions = [
     y: 250,
     eX: 875,
     eY: 375,
+    color: 'black',
     piece: null
   },
   {
@@ -381,6 +428,7 @@ var positions = [
     y: 250,
     eX: 1000,
     eY: 375,
+    color: 'white',
     piece: null
   },
   {
@@ -389,6 +437,7 @@ var positions = [
     y: 125,
     eX: 125,
     eY: 250,
+    color: 'white',
     piece: null
   },
   {
@@ -397,6 +446,7 @@ var positions = [
     y: 125,
     eX: 250,
     eY: 250,
+    color: 'black',
     piece: null
   },
   {
@@ -405,6 +455,7 @@ var positions = [
     y: 125,
     eX: 375,
     eY: 250,
+    color: 'white',
     piece: null
   },
   {
@@ -413,6 +464,7 @@ var positions = [
     y: 125,
     eX: 500,
     eY: 250,
+    color: 'black',
     piece: null
   },
   {
@@ -421,6 +473,7 @@ var positions = [
     y: 125,
     eX: 625,
     eY: 250,
+    color: 'white',
     piece: null
   },
   {
@@ -429,6 +482,7 @@ var positions = [
     y: 125,
     eX: 750,
     eY: 250,
+    color: 'black',
     piece: null
   },
   {
@@ -437,6 +491,7 @@ var positions = [
     y: 125,
     eX: 875,
     eY: 250,
+    color: 'white',
     piece: null
   },
   {
@@ -445,6 +500,7 @@ var positions = [
     y: 125,
     eX: 1000,
     eY: 250,
+    color: 'black',
     piece: null
   },
   {
@@ -453,6 +509,7 @@ var positions = [
     y: 0,
     eX: 125,
     eY: 125,
+    color: 'black',
     piece: null
   },
   {
@@ -461,6 +518,7 @@ var positions = [
     y: 0,
     eX: 250,
     eY: 125,
+    color: 'white',
     piece: null
   },
   {
@@ -469,6 +527,7 @@ var positions = [
     y: 0,
     eX: 375,
     eY: 125,
+    color: 'black',
     piece: null
   },
   {
@@ -477,6 +536,7 @@ var positions = [
     y: 0,
     eX: 500,
     eY: 125,
+    color: 'white',
     piece: null
   },
   {
@@ -485,6 +545,7 @@ var positions = [
     y: 0,
     eX: 625,
     eY: 125,
+    color: 'black',
     piece: null
   },
   {
@@ -493,6 +554,7 @@ var positions = [
     y: 0,
     eX: 750,
     eY: 125,
+    color: 'white',
     piece: null
   },
   {
@@ -501,6 +563,7 @@ var positions = [
     y: 0,
     eX: 875,
     eY: 125,
+    color: 'black',
     piece: null
   },
   {
@@ -509,6 +572,7 @@ var positions = [
     y: 0,
     eX: 1000,
     eY: 125,
+    color: 'white',
     piece: null
   }
 ]
