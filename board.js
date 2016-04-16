@@ -99,13 +99,21 @@ function Board(context) {
   }
 
   executeAction = function (position) {
-    console.log(Board.stateMachine.actualState())
     if (Board.stateMachine.actualState() === 'p1SelectPosition') {
       if (position.piece && position.piece.color === 'white') {
         Board.lastClickedPosition = position
         Board.stateMachine.changeState()
       }
     } else if (Board.stateMachine.actualState() === 'p1MovePiece') {
+      if (Board.lastClickedPosition.piece.movePieceTo(position)) {
+        Board.stateMachine.changeState()
+      }
+    } else if (Board.stateMachine.actualState() === 'p2SelectPosition') {
+      if (position.piece && position.piece.color === 'black') {
+        Board.lastClickedPosition = position
+        Board.stateMachine.changeState()
+      }
+    } else if (Board.stateMachine.actualState() === 'p2MovePiece') {
       if (Board.lastClickedPosition.piece.movePieceTo(position)) {
         Board.stateMachine.changeState()
       }
