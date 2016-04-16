@@ -47,16 +47,22 @@ function Piece(type, position, color, board) {
       ]
     }
 
-    if (positionsIncludeLabel(possiblePositions, newPosition.label)) {
-      if ((newPosition.piece && newPosition.color === 'white')) {
-        alert('Não da pra mover pra essa posição!')
-        return false
-      } else {
-        piece.board.fillPiece(newPosition, piece)
-        piece.board.erase(piece)
-        return true
+    if (newPosition.piece && newPosition.piece.color === 'white') {
+      alert('Não dá para mover pra essa posição')
+      return false
+    } else {
+      if (positionsIncludeLabel(possiblePositions, newPosition.label)) {
+        if ((newPosition.piece && newPosition.color === 'white')) {
+          alert('Não da pra mover pra essa posição!')
+          return false
+        } else {
+          piece.board.fillPiece(newPosition, piece)
+          piece.board.erase(piece)
+          return true
+        }
       }
     }
+
   }
 
   positionsIncludeLabel = function (positions, label) {
