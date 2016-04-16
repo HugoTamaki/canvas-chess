@@ -4,12 +4,14 @@ function Board() {
       fillSquares,
       drawBoard,
       fillPieces,
-      findPosition
+      findPosition,
+      executeAction
 
   Board = {
     positions: positions,
 
-    init: function (context, pieces) {
+    init: function (context, pieces, stateMachine) {
+      this.stateMachine = stateMachine
       drawBoard(context)
       fillPieces(context, pieces)
     },
@@ -21,8 +23,15 @@ function Board() {
       context.drawImage(img, x, y, 90, 90)
     },
 
-    findPosition: function (label) {
+    findPositionByLabel: function (label) {
       return this.positions.find(function (obj) { return obj.label ===  label})
+    },
+
+    findPositionByCoord: function (x, y) {
+      return this.positions.find(function (position) {
+        return ((x >= position.x && x <= position.eX) &&
+          (y >= position.y && y <= position.eY))
+      })
     },
 
     click: function (event) {
@@ -31,12 +40,11 @@ function Board() {
       var x = event.x - rect.left
       var y = event.y - rect.top
 
-      var position = Board.positions.filter(function (position) {
-        return ((x >= position.x && x <= position.eX) &&
-          (y >= position.y && y <= position.eY))
-      })
+      var clickedPosition = Board.findPositionByCoord(x, y)
 
-      console.log(position.label)
+      executeAction(clickedPosition)
+
+      Board.stateMachine.changeState()
     }
   }
 
@@ -76,6 +84,13 @@ function Board() {
     for(var i=start;i<1000;i+=250) {
       context.fillRect(i, height, 125, 125)
     }
+  }
+
+  executeAction = function (position) {
+    console.log(Board.stateMachine.actualState())
+
+    console.log(position.label)
+    console.log(position.piece)
   }
 
   return Board
