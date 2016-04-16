@@ -1,4 +1,4 @@
-function Board() {
+function Board(context) {
   var Board,
       drawLines,
       fillSquares,
@@ -9,18 +9,19 @@ function Board() {
 
   Board = {
     positions: positions,
+    context: context,
 
-    init: function (context, pieces, stateMachine) {
+    init: function (pieces, stateMachine) {
       this.stateMachine = stateMachine
-      drawBoard(context)
-      fillPieces(context, pieces)
+      drawBoard()
+      fillPieces(pieces)
     },
 
-    drawPiece: function (context, piece) {
+    drawPiece: function (piece) {
       var img = document.getElementById(piece.type)
       var x = piece.x + 20
       var y = piece.y + 20
-      context.drawImage(img, x, y, 90, 90)
+      Board.context.drawImage(img, x, y, 90, 90)
     },
 
     findPositionByLabel: function (label) {
@@ -34,6 +35,19 @@ function Board() {
       })
     },
 
+    fillPiece: function (position, piece) {
+      this.erase(position)
+      var img = document.getElementById(piece.type)
+      var x = position.x + 20
+      var y = position.y + 20
+      this.context.drawImage(img, x, y, 90, 90)
+    },
+
+    erase: function (position) {
+      this.context.fillStyle = position.color
+      this.context.fillRect(position.x, position.y, 125, 125)
+    },
+
     click: function (event) {
       var canvas = document.getElementById('canvas')
       var rect = canvas.getBoundingClientRect()
@@ -43,25 +57,23 @@ function Board() {
       var clickedPosition = Board.findPositionByCoord(x, y)
 
       executeAction(clickedPosition)
-
-      Board.stateMachine.changeState()
     }
   }
 
-  drawBoard = function (context) {
-    drawLines(context)
+  drawBoard = function () {
+    drawLines(Board.context)
     for(var i=0;i<1000;i+=125) {
       if (i % 10 === 0) {
-        fillSquares(context, 0, i, '#000000')
+        fillSquares(0, i, '#000000')
       } else {
-        fillSquares(context, 125, i, '#000000')
+        fillSquares(125, i, '#000000')
       }
     }
   }
 
-  fillPieces = function (context, pieces) {
+  fillPieces = function (pieces) {
     pieces.forEach(function (piece) {
-      Board.drawPiece(context, piece)
+      Board.drawPiece(piece)
     })
   }
 
@@ -79,18 +91,26 @@ function Board() {
     }
   }
 
-  fillSquares = function (context, start, height, color) {
-    context.fillStyle = color
+  fillSquares = function (start, height, color) {
+    Board.context.fillStyle = color
     for(var i=start;i<1000;i+=250) {
-      context.fillRect(i, height, 125, 125)
+      Board.context.fillRect(i, height, 125, 125)
     }
   }
 
   executeAction = function (position) {
-    console.log(Board.stateMachine.actualState())
+    if (Board.stateMachine.actualState() === 'p1SelectPosition') {
+      if (position.piece && position.piece.color === 'white') {
+        Board.lastClickedPosition = position
+        Board.stateMachine.changeState()
+      }
+    } else if (Board.stateMachine.actualState() === 'p1MovePiece') {
+      if (Board.lastClickedPosition.piece.movePieceTo(position)) {
+        Board.stateMachine.changeState()
+      }
+    }
 
-    console.log(position.label)
-    console.log(position.piece)
+    console.log(position)
   }
 
   return Board
