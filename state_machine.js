@@ -16,7 +16,6 @@ function StateMachine() {
     },
 
     changeState: function () {
-      console.log(this.index)
       this.index = (this.index === 3) ? 0 : this.index + 1
     }
   }
