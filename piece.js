@@ -38,9 +38,11 @@ function Piece(type, position, color, board) {
         if (positionsIncludeLabel(possiblePositions, newPosition.label)) {
           if ((newPosition.piece && newPosition.color === 'white')) {
             alert('Não da pra mover pra essa posição!')
+            return false
           } else {
             this.board.fillPiece(newPosition, this)
             this.board.erase(this)
+            return true
           }
         }
       }

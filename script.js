@@ -1,8 +1,8 @@
 $(document).ready(function () {
   var stateMachine = StateMachine(),
-      canvas = document.getElementById('canvas'),
-      context = canvas.getContext("2d"),
-      board = Board(context),
+      canvas       = document.getElementById('canvas'),
+      context      = canvas.getContext("2d"),
+      board        = Board(context),
       whitePawn1   = Piece('white-pawn', board.findPositionByLabel('A2'), 'white', board),
       whitePawn2   = Piece('white-pawn', board.findPositionByLabel('B2'), 'white', board),
       whitePawn3   = Piece('white-pawn', board.findPositionByLabel('C2'), 'white', board),

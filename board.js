@@ -99,6 +99,7 @@ function Board(context) {
   }
 
   executeAction = function (position) {
+    console.log(Board.stateMachine.actualState())
     if (Board.stateMachine.actualState() === 'p1SelectPosition') {
       if (position.piece && position.piece.color === 'white') {
         Board.lastClickedPosition = position
