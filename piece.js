@@ -1,6 +1,7 @@
 function Piece(type, position, color, board) {
   var Piece,
-      positionsIncludeLabel
+      positionsIncludeLabel,
+      whitePawnAction
 
   Piece = {
     x: position.x,
@@ -23,28 +24,37 @@ function Piece(type, position, color, board) {
       newColumn = newPosition.label.split('')[0]
       newLine = newPosition.label.split('')[1]
 
-      if (this.type === 'white-pawn') {
-        if (oldLine === '2') {
-          possiblePositions = [
-            oldColumn + (parseInt(oldLine) + 1),
-            oldColumn + (parseInt(oldLine) + 2)
-          ]
-        } else {
-          possiblePositions = [
-            oldColumn + (parseInt(oldLine) + 1)
-          ]
-        }
+      oldPosition = {
+        column: oldColumn,
+        line: oldLine
+      }
 
-        if (positionsIncludeLabel(possiblePositions, newPosition.label)) {
-          if ((newPosition.piece && newPosition.color === 'white')) {
-            alert('Não da pra mover pra essa posição!')
-            return false
-          } else {
-            this.board.fillPiece(newPosition, this)
-            this.board.erase(this)
-            return true
-          }
-        }
+      if (this.type === 'white-pawn') {
+        return whitePawnAction(oldPosition, newPosition, this)
+      }
+    }
+  }
+
+  whitePawnAction = function (oldPosition, newPosition, piece) {
+    if (oldPosition.line === '2') {
+      possiblePositions = [
+        oldPosition.column + (parseInt(oldPosition.line) + 1),
+        oldPosition.column + (parseInt(oldPosition.line) + 2)
+      ]
+    } else {
+      possiblePositions = [
+        oldPosition.column + (parseInt(oldPosition.line) + 1)
+      ]
+    }
+
+    if (positionsIncludeLabel(possiblePositions, newPosition.label)) {
+      if ((newPosition.piece && newPosition.color === 'white')) {
+        alert('Não da pra mover pra essa posição!')
+        return false
+      } else {
+        piece.board.fillPiece(newPosition, piece)
+        piece.board.erase(piece)
+        return true
       }
     }
   }
