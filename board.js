@@ -107,6 +107,8 @@ function Board(context) {
     } else if (Board.stateMachine.actualState() === 'p1MovePiece') {
       if (Board.lastClickedPosition.piece.movePieceTo(position)) {
         Board.stateMachine.changeState()
+      } else {
+        Board.stateMachine.returnState()
       }
     } else if (Board.stateMachine.actualState() === 'p2SelectPosition') {
       if (position.piece && position.piece.color === 'black') {

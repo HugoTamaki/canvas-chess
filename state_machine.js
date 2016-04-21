@@ -17,6 +17,10 @@ function StateMachine() {
 
     changeState: function () {
       this.index = (this.index === 3) ? 0 : this.index + 1
+    },
+
+    returnState: function () {
+      this.index = (this.index === 0) ? 3 : this.index - 1
     }
   }
 
