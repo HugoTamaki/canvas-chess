@@ -1,7 +1,15 @@
 function Piece(type, position, color, board) {
   var Piece,
-      positionsIncludeLabel,
-      whitePawnAction
+      insidePossiblePositions,
+      whitePawnAction,
+      moveColumn,
+      boardPossiblePositions,
+      insideBoardPositions,
+      whitePawnPossiblePositions
+
+  boardPossiblePositions = board.positions.map(function (position) {
+    return position.label
+  })
 
   Piece = {
     x: position.x,
@@ -16,11 +24,10 @@ function Piece(type, position, color, board) {
       var oldColumn,
           oldLine,
           newColumn,
-          newLine,
-          possiblePositions
+          newLine
 
-      oldColumn = this.position.label.split('')[0]
-      oldLine = this.position.label.split('')[1]
+      oldColumn = this.board.lastClickedPosition.label.split('')[0]
+      oldLine = this.board.lastClickedPosition.label.split('')[1]
       newColumn = newPosition.label.split('')[0]
       newLine = newPosition.label.split('')[1]
 
@@ -35,7 +42,43 @@ function Piece(type, position, color, board) {
     }
   }
 
+  insideBoardPositions = function (label) {
+    return boardPossiblePositions.find(function (elem) {
+      return elem === label
+    })
+  }
+
+  insidePossiblePositions = function (positions, label) {
+    return positions.find(function (position) {
+      return position === label
+    })
+  }
+
   whitePawnAction = function (oldPosition, newPosition, piece) {
+    var possiblePositions = whitePawnPossiblePositions(oldPosition, newPosition)
+
+    if (newPosition.piece && newPosition.piece.color === 'white') {
+      alert('Não dá para mover pra essa posição')
+      return false
+    } else {
+      if (insidePossiblePositions(possiblePositions, newPosition.label)) {
+        if ((newPosition.piece && newPosition.color === 'black')) {
+          newPosition.piece = piece
+        }
+        piece.board.fillPiece(newPosition, piece)
+        piece.board.erase(piece)
+        return true
+      } else {
+        alert('Não dá para mover pra essa posição')
+        return false
+      }
+    }
+  }
+
+  whitePawnPossiblePositions = function (oldPosition, newPosition) {
+    var possiblePositions,
+        offensivePositions
+
     if (oldPosition.line === '2') {
       possiblePositions = [
         oldPosition.column + (parseInt(oldPosition.line) + 1),
@@ -47,28 +90,26 @@ function Piece(type, position, color, board) {
       ]
     }
 
-    if (newPosition.piece && newPosition.piece.color === 'white') {
-      alert('Não dá para mover pra essa posição')
-      return false
-    } else {
-      if (positionsIncludeLabel(possiblePositions, newPosition.label)) {
-        if ((newPosition.piece && newPosition.color === 'white')) {
-          alert('Não da pra mover pra essa posição!')
-          return false
-        } else {
-          piece.board.fillPiece(newPosition, piece)
-          piece.board.erase(piece)
-          return true
+    if (newPosition.piece && newPosition.piece.color === 'black') {
+      var offensivePositions = [
+        moveColumn(oldPosition.column, 1) + (parseInt(oldPosition.line) + 1),
+        moveColumn(oldPosition.column, -1) + (parseInt(oldPosition.line) + 1)
+      ]
+
+      offensivePositions.forEach(function (offensivePosition) {
+        if (insideBoardPositions(offensivePosition)) {
+          possiblePositions.push(offensivePosition)
         }
-      }
+      })
     }
 
+    return possiblePositions
   }
 
-  positionsIncludeLabel = function (positions, label) {
-    return positions.filter(function (position) {
-      return position.label === label
-    })
+  moveColumn = function (char, times) {
+    var unicode = char.codePointAt(0)
+    unicode += times
+    return String.fromCodePoint(unicode)
   }
 
   position.piece = Piece
