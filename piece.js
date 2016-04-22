@@ -5,7 +5,8 @@ function Piece(type, position, color, board) {
       moveColumn,
       boardPossiblePositions,
       insideBoardPositions,
-      whitePawnPossiblePositions
+      whitePawnPossiblePositions,
+      canMovePawn
 
   boardPossiblePositions = board.positions.map(function (position) {
     return position.label
@@ -76,34 +77,41 @@ function Piece(type, position, color, board) {
   }
 
   whitePawnPossiblePositions = function (oldPosition, newPosition) {
-    var possiblePositions,
+    var possiblePositions = [],
         offensivePositions
 
-    if (oldPosition.line === '2') {
-      possiblePositions = [
-        oldPosition.column + (parseInt(oldPosition.line) + 1),
-        oldPosition.column + (parseInt(oldPosition.line) + 2)
-      ]
-    } else {
-      possiblePositions = [
-        oldPosition.column + (parseInt(oldPosition.line) + 1)
-      ]
-    }
+    if (canMovePawn(newPosition, oldPosition)) {
+      if (oldPosition.line === '2') {
+        possiblePositions = [
+          oldPosition.column + (parseInt(oldPosition.line) + 1),
+          oldPosition.column + (parseInt(oldPosition.line) + 2)
+        ]
+      } else {
+        possiblePositions = [
+          oldPosition.column + (parseInt(oldPosition.line) + 1)
+        ]
+      }
 
-    if (newPosition.piece && newPosition.piece.color === 'black') {
-      var offensivePositions = [
-        moveColumn(oldPosition.column, 1) + (parseInt(oldPosition.line) + 1),
-        moveColumn(oldPosition.column, -1) + (parseInt(oldPosition.line) + 1)
-      ]
+      if (newPosition.piece && newPosition.piece.color === 'black') {
+        var offensivePositions = [
+          moveColumn(oldPosition.column, 1) + (parseInt(oldPosition.line) + 1),
+          moveColumn(oldPosition.column, -1) + (parseInt(oldPosition.line) + 1)
+        ]
 
-      offensivePositions.forEach(function (offensivePosition) {
-        if (insideBoardPositions(offensivePosition)) {
-          possiblePositions.push(offensivePosition)
-        }
-      })
+        offensivePositions.forEach(function (offensivePosition) {
+          if (insideBoardPositions(offensivePosition)) {
+            possiblePositions.push(offensivePosition)
+          }
+        })
+      }
     }
 
     return possiblePositions
+  }
+
+  canMovePawn = function (newPosition, oldPosition) {
+    return !newPosition.piece ||
+      newPosition.label !== (oldPosition.column + (parseInt(oldPosition.line) + 1))
   }
 
   moveColumn = function (char, times) {
