@@ -118,6 +118,8 @@ function Board(context) {
     } else if (Board.stateMachine.actualState() === 'p2MovePiece') {
       if (Board.lastClickedPosition.piece.movePieceTo(position)) {
         Board.stateMachine.changeState()
+      } else {
+        Board.stateMachine.returnState()
       }
     }
 
