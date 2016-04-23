@@ -88,7 +88,7 @@ function Piece(type, position, color, board) {
         pieceColor = piece.color,
         antiColor = piece.color === 'white' ? 'black' : 'white'
 
-    if (canMovePawn(newPosition, oldPosition)) {
+    if (canMovePawn(newPosition, oldPosition, advanceOne)) {
       if (oldPosition.line === '2' || oldPosition.line === '7') {
         possiblePositions = [
           oldPosition.column + (parseInt(oldPosition.line) + advanceOne),
@@ -125,9 +125,9 @@ function Piece(type, position, color, board) {
     }
   }
 
-  canMovePawn = function (newPosition, oldPosition) {
+  canMovePawn = function (newPosition, oldPosition, qty) {
     return !newPosition.piece ||
-      newPosition.label !== (oldPosition.column + (parseInt(oldPosition.line) + 1))
+      newPosition.label !== (oldPosition.column + (parseInt(oldPosition.line) + qty))
   }
 
   moveColumn = function (char, times) {
