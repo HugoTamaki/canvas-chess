@@ -62,13 +62,17 @@ function Piece(type, position, color, board) {
   pawnAction = function (oldPosition, newPosition, piece) {
     var possiblePositions = pawnPossiblePositions(oldPosition, newPosition, piece),
         pieceColor = piece.color,
-        antiColor = piece.color === 'white' ? 'black' : 'white'
+        antiColor = piece.color === 'white' ? 'black' : 'white',
+        lastClickedPosition
 
     if (newPosition.piece && newPosition.piece.color === pieceColor) {
       alert('Não dá para mover pra essa posição')
       return false
     } else {
       if (insidePossiblePositions(possiblePositions, newPosition.label)) {
+        lastClickedPosition = piece.board.findPositionByLabel(oldPosition.column + oldPosition.line)
+
+        lastClickedPosition.piece = null
         piece.board.fillPiece(newPosition, piece)
         piece.board.erase(oldPosition)
         newPosition.piece = piece
